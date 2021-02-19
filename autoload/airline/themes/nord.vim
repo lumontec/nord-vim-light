@@ -1,7 +1,7 @@
 " Copyright (C) 2020-present Luca Montechiesi <lucamontechiesi@gmail.com>
 
 " Project: Nord Vim Light
-" Repository: https://github.com/lumontec/nord-vim
+" Repository: https://github.com/lumontec/nord-vim-light
 " License: MIT
 
 let s:nord_vim_version="0.15.0"
