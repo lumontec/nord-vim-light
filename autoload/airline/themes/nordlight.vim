@@ -41,7 +41,7 @@ let s:nord10_term = "2"
 let s:nord7_term = "4"
 let s:nord6_term = "6"
 
-let s:NMain = [s:nord1_gui, s:nord8_gui, s:nord1_term, s:nord8_term]
+let s:NMain = [s:nord1_gui, s:nord8_gui, s:nord2_term, s:nord8_term]
 let s:NRight = [s:nord1_gui, s:nord9_gui, s:nord1_term, s:nord9_term]
 let s:NMiddle = [s:nord5_gui, s:nord3_gui, s:nord5_term, s:nord3_term]
 let s:NWarn = [s:nord1_gui, s:nord13_gui, s:nord3_term, s:nord13_term]
@@ -50,7 +50,7 @@ let g:airline#themes#nordlight#palette.normal = airline#themes#generate_color_ma
 let g:airline#themes#nordlight#palette.normal.airline_warning = s:NWarn
 let g:airline#themes#nordlight#palette.normal.airline_error = s:NError
 
-let s:IMain = [s:nord1_gui, s:nord14_gui, s:nord1_term, s:nord6_term]
+let s:IMain = [s:nord1_gui, s:nord14_gui, s:nord2_term, s:nord6_term]
 let s:IRight = [s:nord1_gui, s:nord9_gui, s:nord1_term, s:nord9_term]
 let s:IMiddle = [s:nord5_gui, s:nord3_gui, s:nord5_term, s:nord3_term]
 let s:IWarn = [s:nord1_gui, s:nord13_gui, s:nord3_term, s:nord13_term]
@@ -59,7 +59,7 @@ let g:airline#themes#nordlight#palette.insert = airline#themes#generate_color_ma
 let g:airline#themes#nordlight#palette.insert.airline_warning = s:IWarn
 let g:airline#themes#nordlight#palette.insert.airline_error = s:IError
 
-let s:RMain = [s:nord1_gui, s:nord14_gui, s:nord1_term, s:nord14_term]
+let s:RMain = [s:nord1_gui, s:nord14_gui, s:nord2_term, s:nord14_term]
 let s:RRight = [s:nord1_gui, s:nord9_gui, s:nord1_term, s:nord9_term]
 let s:RMiddle = [s:nord5_gui, s:nord3_gui, s:nord5_term, s:nord3_term]
 let s:RWarn = [s:nord1_gui, s:nord13_gui, s:nord3_term, s:nord13_term]
@@ -68,7 +68,7 @@ let g:airline#themes#nordlight#palette.replace = airline#themes#generate_color_m
 let g:airline#themes#nordlight#palette.replace.airline_warning = s:RWarn
 let g:airline#themes#nordlight#palette.replace.airline_error = s:RError
 
-let s:VMain = [s:nord1_gui, s:nord7_gui, s:nord1_term, s:nord7_term]
+let s:VMain = [s:nord1_gui, s:nord7_gui, s:nord2_term, s:nord7_term]
 let s:VRight = [s:nord1_gui, s:nord9_gui, s:nord1_term, s:nord9_term]
 let s:VMiddle = [s:nord5_gui, s:nord3_gui, s:nord5_term, s:nord3_term]
 let s:VWarn = [s:nord1_gui, s:nord13_gui, s:nord3_term, s:nord13_term]
