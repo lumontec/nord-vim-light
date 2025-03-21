@@ -135,25 +135,45 @@ if !exists("g:nord_bold_vertical_split_line")
 endif
 
 function! s:hi(group, guifg, guibg, ctermfg, ctermbg, attr, guisp)
-  if a:guifg != ""
-    exec "hi " . a:group . " guifg=" . a:guifg
+  if a:guifg == ""
+    let guifg_cmd = "guifg=NONE"
+  else
+    let guifg_cmd = "guifg=" . a:guifg
   endif
-  if a:guibg != ""
-    exec "hi " . a:group . " guibg=" . a:guibg
+
+  if a:guibg == ""
+    let guibg_cmd = "guibg=NONE"
+  else
+    let guibg_cmd = "guibg=" . a:guibg
   endif
-  if a:ctermfg != ""
-    exec "hi " . a:group . " ctermfg=" . a:ctermfg
+
+  if a:ctermfg == ""
+    let ctermfg_cmd = "ctermfg=NONE"
+  else
+    let ctermfg_cmd = "ctermfg=" . a:ctermfg
   endif
-  if a:ctermbg != ""
-    exec "hi " . a:group . " ctermbg=" . a:ctermbg
+
+  if a:ctermbg == ""
+    let ctermbg_cmd = "ctermbg=NONE"
+  else
+    let ctermbg_cmd = "ctermbg=" . a:ctermbg
   endif
-  if a:attr != ""
-    exec "hi " . a:group . " gui=" . a:attr . " cterm=" . substitute(a:attr, "undercurl", s:underline, "")
+
+  if a:attr == ""
+    let attr_cmd = "gui=NONE cterm=NONE"
+  else
+    let attr_cmd = "gui=" . a:attr . " cterm=" . substitute(a:attr, "undercurl", s:underline, "")
   endif
-  if a:guisp != ""
-    exec "hi " . a:group . " guisp=" . a:guisp
+
+  if a:guisp == ""
+    let guisp_cmd = "guisp=NONE"
+  else
+    let guisp_cmd = "guisp=" . a:guisp
   endif
+
+  exec "hi " . a:group . " " . guifg_cmd . " " . guibg_cmd . " " . ctermfg_cmd . " " . ctermbg_cmd . " " . attr_cmd . " " . guisp_cmd
 endfunction
+
 
 "+---------------+
 "+ UI Components +
@@ -166,7 +186,7 @@ call s:hi("Underline", "", "", "", "", s:underline, "")
 "+--- Editor ---+
 call s:hi("ColorColumn", "", s:nord1_gui, "NONE", s:nord1_term, "", "")
 call s:hi("Cursor", s:nord0_gui, s:nord4_gui, "", "NONE", "", "")
-call s:hi("CursorLine", "NONE", "", s:nord3_term, s:nord1_term, "NONE", "")
+"call s:hi("CursorLine", s:nord0_gui, s:nord4_gui, s:nord3_term, s:nord1_term, "", "")
 call s:hi("Error", s:nord4_gui, s:nord11_gui, "", s:nord11_term, "", "")
 call s:hi("iCursor", s:nord0_gui, s:nord4_gui, "", "NONE", "", "")
 call s:hi("LineNr", s:nord3_gui, "NONE", s:nord3_term, "NONE", "", "")
@@ -182,7 +202,7 @@ call s:hi("SpellBad", s:nord11_gui, s:nord0_gui, s:nord11_term, "NONE", "undercu
 call s:hi("SpellCap", s:nord13_gui, s:nord0_gui, s:nord13_term, "NONE", "undercurl", s:nord13_gui)
 call s:hi("SpellLocal", s:nord5_gui, s:nord0_gui, s:nord5_term, "NONE", "undercurl", s:nord5_gui)
 call s:hi("SpellRare", s:nord6_gui, s:nord0_gui, s:nord6_term, "NONE", "undercurl", s:nord6_gui)
-call s:hi("Visual", "", s:nord2_gui, "", s:nord10_term, "", "")
+call s:hi("Visual", "", s:nord2_gui, "", s:nord1_term, s:bold, "")
 call s:hi("VisualNOS", "", s:nord2_gui, "", s:nord1_term, "", "")
 "+- Neovim Support -+
 call s:hi("healthError", s:nord11_gui, s:nord1_gui, s:nord11_term, s:nord1_term, "", "")
@@ -222,7 +242,7 @@ if g:nord_cursor_line_number_background == 0
 else
   call s:hi("CursorLineNr", s:nord4_gui, s:nord1_gui, "NONE", s:nord1_term, "NONE", "")
 endif
-call s:hi("Folded", s:nord3_gui, s:nord1_gui, s:nord3_term, s:nord1_term, s:bold, "")
+call s:hi("Folded", "", "", s:nord3_term, "", s:bold, "")
 call s:hi("FoldColumn", s:nord3_gui, s:nord0_gui, s:nord3_term, "NONE", "", "")
 call s:hi("SignColumn", s:nord1_gui, s:nord0_gui, s:nord1_term, "NONE", "", "")
 
